@@ -127,11 +127,14 @@ $$(".photo img").forEach(img=>{
 (function(){
   const sec = $("#resume"); if(!sec) return;
   const chapters = [
-    {theme:"AI Governance",color:"#5C89FF",when:"Most recent",co:"GitHub",role:"Senior Program Manager, Technical",where:"Microsoft · CoreAI",desc:"Owned Model Gating for Copilot, the Limited Access Framework, and the High Priority Feedback system. Lifted feedback SLA attainment from 52% to 92%.",tags:["AI","Governance","RAI"]},
-    {theme:"Shipping Outcomes",color:"#F2A33A",when:"Chapter three",co:"Product & Program",role:"Product & Program Management",where:"Betterment → GitHub",desc:"Moved from shipping code to shipping outcomes across teams.",tags:["Strategy","Delivery"]},
-    {theme:"Builder Era",color:"#3DD68C",when:"Chapter two",co:"Betterment",role:"Software Engineer",where:"Fintech",desc:"Built product in Ruby on Rails, Python, and GraphQL.",tags:["Rails","Python","GraphQL"]},
-    {theme:"Customer First",color:"#FF6B6B",when:"Where it started",co:"Betterment",role:"Product Support",where:"Fintech",desc:"Learned the product from the customer side and which problems keep coming back.",tags:["Support","VoC"]}
+    {theme:"AI Governance",jump:"AI Gov",color:"#5C89FF",when:"GitHub / Microsoft · 2022–2026",co:"AI Governance",role:"Senior Program Manager · CoreAI",where:"Model Gating · Limited Access Framework",desc:"Led Model Gating for Microsoft Copilot: 5 engineers across 4 time zones and 25+ stakeholders aligned on one decision framework. Built the Limited Access Framework from a blank slate, with three parallel workstreams across Legal, Responsible AI, Engineering, and Risk.",tags:["Copilot","Model Gating","LAF","RACI"]},
+    {theme:"Feedback Ecosystem",jump:"Feedback",color:"#F2A33A",when:"GitHub / Microsoft · 2022–2026",co:"Feedback",role:"Senior Program Manager · Feedback ecosystem",where:"HPF · Matchy Matchy · Unwrap",desc:"Built High Priority Feedback from scratch, connecting 1,000+ enterprise signals to roadmaps and $508M+ in nominated ARR. Automated it to lift SLA attainment from 52% to 92%, shipped 170 priority changes in 18 months, and built Matchy Matchy, which has matched 6,000+ issues.",tags:["HPF","Automation","AI","Dashboards"]},
+    {theme:"Community",jump:"Community",color:"#3DD68C",when:"GitHub / Microsoft · 2022–2026",co:"Community",role:"Senior Program Manager · Community program",where:"GitHub Community Discussions",desc:"Grew monthly engaged community users from 5,000 to 48,000, migrated the community from Discord to GitHub Community Discussions, and doubled the Community Events program in one year with Revenue, EPD, and Operations.",tags:["Community","Events","Migration"]},
+    {theme:"Shipping Outcomes",jump:"Product",color:"#B07CFF",when:"Chapter three",co:"Product & Program",role:"Product & Program Management",where:"Betterment → GitHub",desc:"Moved from shipping code to shipping outcomes across teams.",tags:["Strategy","Delivery"]},
+    {theme:"Builder Era",jump:"Engineer",color:"#2EC5D3",when:"Chapter two",co:"Betterment",role:"Software Engineer",where:"Fintech",desc:"Built product in Ruby on Rails, Python, and GraphQL.",tags:["Rails","Python","GraphQL"]},
+    {theme:"Customer First",jump:"Support",color:"#FF6B6B",when:"Where it started",co:"Betterment",role:"Product Support",where:"Fintech",desc:"Learned the product from the customer side and which problems keep coming back.",tags:["Support","VoC"]}
   ];
+  sec.style.height = (chapters.length * 100 + 100) + "vh";
   const stage = $(".stage",sec), cv = $("#tunnel"), ctx = cv.getContext("2d");
   const chapsEl = $("#chaps"), prog = $("#jprog"), jump = $("#jump");
   $("#jtotal").textContent = String(chapters.length).padStart(2,"0");
@@ -140,7 +143,7 @@ $$(".photo img").forEach(img=>{
     d.innerHTML = `<div class="in"><div class="when">${c.when}</div><h3>${c.co}</h3><div class="role">${c.role}</div><div class="meta">${c.where}</div><p class="desc">${c.desc}</p><div class="tg">${c.tags.map(t=>`<span>${t}</span>`).join("")}</div></div>`;
     chapsEl.appendChild(d);
     const s = document.createElement("span"); s.innerHTML = "<i></i>"; prog.appendChild(s);
-    const b = document.createElement("button"); b.type="button"; b.textContent = c.co.split(" ")[0];
+    const b = document.createElement("button"); b.type="button"; b.textContent = c.jump || c.co;
     b.addEventListener("click",()=>window.scrollTo({top: sec.offsetTop + (i+.5)*(sec.offsetHeight-innerHeight)/chapters.length, behavior:"smooth"}));
     jump.appendChild(b);
   });
