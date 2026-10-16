@@ -6,10 +6,6 @@
 
 /* ---------- Settings you may want to change ---------- */
 const SITE = {
-  // Paste a Formspree endpoint (https://formspree.io) to make the
-  // contact form deliver email, e.g. "https://formspree.io/f/abcdwxyz".
-  // Leave empty and the form tells visitors to email you directly.
-  formEndpoint: "",
   timeZone: "America/New_York",
   typedRoles: ["Program Manager", "TPM", "Product Ops Lead", "Former Engineer", "Builder"]
 };
@@ -54,12 +50,17 @@ const $ = (sel, root=document) => root.querySelector(sel);
 const $$ = (sel, root=document) => [...root.querySelectorAll(sel)];
 const esc = s => String(s).replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
 
-/* ---------- Live clock ---------- */
+/* ---------- Keep the full name on one line, sized to fill the width ---------- */
 (function(){
-  const el = $("#clock"); if(!el) return;
-  const f = new Intl.DateTimeFormat("en-US",{hour:"numeric",minute:"2-digit",timeZone:SITE.timeZone});
-  const tick = () => el.textContent = f.format(new Date());
-  tick(); setInterval(tick, 15000);
+  const h = $(".big"); if(!h) return;
+  const fit = () => {
+    h.style.fontSize = "100px";
+    const size = 100 * h.clientWidth / h.scrollWidth * 0.995;
+    h.style.fontSize = Math.max(20, Math.min(132, size)) + "px";
+  };
+  fit();
+  addEventListener("resize", fit);
+  if(document.fonts && document.fonts.ready) document.fonts.ready.then(fit);
 })();
 
 /* ---------- Photos: hide placeholder once the image loads ---------- */
@@ -83,25 +84,6 @@ $$(".photo img").forEach(img=>{
     else { c--; el.textContent = word.slice(0,c); if(c===0){ del=false; w=(w+1)%words.length; } }
     setTimeout(step, del?45:85);
   })();
-})();
-
-/* ---------- Expertise bars (self-ratings: edit to taste) ---------- */
-(function(){
-  const box = $("#bars"); if(!box) return;
-  const sets = {
-    prog:[["Program Design",95],["Cross-functional Alignment",95],["Risk & Decision Records",90],["Launch Governance",90]],
-    eng:[["Python",85],["Ruby on Rails",80],["GraphQL",75],["GitHub Actions",90]],
-    ai:[["Responsible AI Review",90],["LLM Applications",85],["Azure AI Search",80],["MCP",75]],
-    ops:[["Product Operations",90],["Voice of Customer",95],["Payroll & Finance Ops",85],["Compliance",85]]
-  };
-  const tabs = $$("#skilltabs button");
-  const show = k => {
-    box.innerHTML = sets[k].map(([n,v])=>`<div class="bar"><div class="l"><span>${n}</span><b>${v}%</b></div><div class="t"><div class="f" data-v="${v}"></div></div></div>`).join("");
-    tabs.forEach(t=>t.setAttribute("aria-selected", t.dataset.k===k));
-    requestAnimationFrame(()=>requestAnimationFrame(()=>$$(".f",box).forEach(f=>f.style.width=f.dataset.v+"%")));
-  };
-  tabs.forEach(t=>t.addEventListener("click",()=>show(t.dataset.k)));
-  show("prog");
 })();
 
 /* ---------- Writing & Lab cards (homepage + writing/index.html) ---------- */
@@ -145,8 +127,7 @@ $$(".photo img").forEach(img=>{
   const sec = $("#resume"); if(!sec) return;
   const chapters = [
     {theme:"AI Governance",color:"#5C89FF",when:"Most recent",co:"GitHub",role:"Senior Program Manager, Technical",where:"Microsoft · CoreAI",desc:"Owned Model Gating for Copilot, the Limited Access Framework, and the High Priority Feedback system. Lifted feedback SLA attainment from 52% to 92%.",tags:["AI","Governance","RAI"]},
-    {theme:"Operator Mode",color:"#F2A33A",when:"In parallel",co:"BXProtects",role:"Co-owner & Operations Lead",where:"Diaz Security Services",desc:"Runs HR, finance, compliance, and staffing for a family-owned security services company.",tags:["Ops","Finance","HR"]},
-    {theme:"Shipping Outcomes",color:"#B07CFF",when:"Chapter three",co:"Product & Program",role:"Product & Program Management",where:"Betterment → GitHub",desc:"Moved from shipping code to shipping outcomes across teams.",tags:["Strategy","Delivery"]},
+    {theme:"Shipping Outcomes",color:"#F2A33A",when:"Chapter three",co:"Product & Program",role:"Product & Program Management",where:"Betterment → GitHub",desc:"Moved from shipping code to shipping outcomes across teams.",tags:["Strategy","Delivery"]},
     {theme:"Builder Era",color:"#3DD68C",when:"Chapter two",co:"Betterment",role:"Software Engineer",where:"Fintech",desc:"Built product in Ruby on Rails, Python, and GraphQL.",tags:["Rails","Python","GraphQL"]},
     {theme:"Customer First",color:"#FF6B6B",when:"Where it started",co:"Betterment",role:"Product Support",where:"Fintech",desc:"Learned the product from the customer side and which problems keep coming back.",tags:["Support","VoC"]}
   ];
@@ -233,18 +214,3 @@ $$(".photo img").forEach(img=>{
   });
 })();
 
-/* ---------- Contact form ---------- */
-(function(){
-  const form = $("#cform"); if(!form) return;
-  const msg = $("#fmsg");
-  form.addEventListener("submit", async e=>{
-    e.preventDefault();
-    if(!SITE.formEndpoint){ msg.textContent = "Thanks! The form isn't connected yet, so please email me at the address above."; return; }
-    msg.textContent = "Sending…";
-    try{
-      const res = await fetch(SITE.formEndpoint,{method:"POST",headers:{Accept:"application/json"},body:new FormData(form)});
-      if(res.ok){ form.reset(); msg.textContent = "Sent. I'll get back to you soon."; }
-      else msg.textContent = "That didn't send. Please email me directly instead.";
-    }catch(_){ msg.textContent = "That didn't send. Please email me directly instead."; }
-  });
-})();

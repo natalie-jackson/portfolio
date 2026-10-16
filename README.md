@@ -12,7 +12,7 @@ writing/index.html         "Writing & Lab" listing page with filters
 writing/<slug>.html        One file per post
 writing/_template.html     The template I copy to start a new post
 assets/css/site.css        All styles
-assets/js/site.js          All behavior (clock, typing effect, skill bars, journey tunnel, post cards, contact form)
+assets/js/site.js          All behavior (typing effect, journey tunnel, post cards)
 assets/js/posts.js         The list of posts shown on the site
 assets/js/demos/           Scripts for interactive demos inside posts
 assets/img/                Photos and images
@@ -36,13 +36,9 @@ If you fork this, these are the spots that are specific to me:
 
 **Photos.** Mine live at `assets/img/headshot.jpg` (the hero, portrait orientation) and `assets/img/about.jpg` (the About card, also portrait). Swap in your own with the same file names. If the files are missing, a placeholder shows instead.
 
-**Links and email.** In `index.html`, search for `TODO` to find the LinkedIn URL, LinkedIn handle, and public email. The GitHub links point to my username, `natalie-jackson`, so search for that and replace it with yours.
+**Links and email.** In `index.html`, search for `linkedin.com/in/natalierj` and `natalierodriguezjackson@gmail.com`. The GitHub links point to my username, `natalie-jackson`, so search for that and replace it with yours.
 
 **Journey chapters.** My career story lives in `assets/js/site.js` under "Journey tunnel", in `const chapters = [`. Each chapter is one entry; rewrite them with your own path.
-
-**Skill bars.** Also in `assets/js/site.js`, under "Expertise bars", in `const sets = {`. Change the skills and levels to match yours.
-
-**Contact form.** I use Formspree so the form actually sends email. Create a free form at https://formspree.io, then paste your endpoint into `formEndpoint` at the top of `assets/js/site.js`. Don't reuse mine, or your messages will come to me.
 
 **Posts.** My posts in `writing/` and their entries in `assets/js/posts.js` are my own writing. Clear those out and add yours (see below).
 
