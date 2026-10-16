@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Matchy Matchy · Natalie Rodriguez-Jackson</title>
+  <meta name="description" content="Semantic matching that pairs incoming customer feedback with existing issues, with a small demo you can run in your browser.">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%230A0A0A'/%3E%3Ctext x='7' y='23' font-family='Arial' font-weight='700' font-size='18' fill='%23fff'%3En%3C/text%3E%3Ccircle cx='24' cy='21' r='2.6' fill='%23E0613A'/%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter+Tight:ital,wght@0,400;0,500;0,600;1,500;1,600&family=JetBrains+Mono:wght@400;500&display=swap">
+  <link rel="stylesheet" href="../assets/css/site.css">
+</head>
+<body>
+
+<header class="top">
+  <div class="row">
+    <a class="logo" href="../">natalie<b>.</b></a>
+    <nav class="pill" aria-label="Site">
+      <a href="../#about">About</a>
+      <a href="../#services">Work</a>
+      <a href="../#resume">Journey</a>
+      <a class="on" href="./">Writing</a>
+      <a href="../#contact">Contact</a>
+    </nav>
+    <div class="socials">
+      <a class="circ" href="https://www.linkedin.com/" target="_blank" rel="noopener" aria-label="LinkedIn"><svg class="i" style="width:15px;height:15px"><use href="#i-li"/></svg></a>
+      <a class="circ" href="https://github.com/natalie-jackson" target="_blank" rel="noopener" aria-label="GitHub"><svg class="i" style="width:15px;height:15px"><use href="#i-gh"/></svg></a>
+    </div>
+  </div>
+</header>
+
+<main class="wrap">
+  <header class="art-head">
+    <a class="back" href="./"><svg class="i"><use href="#i-right"/></svg>All writing</a>
+    <div class="art-meta"><span class="kind">AI Tool</span><span>Oct 2026</span><span>·</span><span>4 min read</span><span class="live">Live demo</span></div>
+    <h1 class="art-title">Matchy Matchy: matching customer feedback to issues you already know about</h1>
+    <p class="art-dek">Most incoming feedback isn't new. The hard part is noticing that fast enough to act on what actually is.</p>
+  </header>
+
+  <article class="prose">
+    <p>Every feedback program hits the same wall. Customers describe one problem in a hundred different ways, and each report lands as if it were new. Triage teams spend their time asking "haven't we seen this already?" instead of routing what matters.</p>
+
+    <p>I built <strong>Matchy Matchy</strong> to answer that question automatically. It takes a new piece of customer feedback and finds the existing issues that mean the same thing, even when they share almost no words.</p>
+
+    <h2>How it works</h2>
+    <p>Matchy Matchy compares feedback by meaning instead of by keywords:</p>
+    <ul>
+      <li><strong>Azure AI Search</strong> holds the index of existing issues and runs the similarity search.</li>
+      <li><strong>GitHub Models / Azure OpenAI</strong> provide the language models behind the matching.</li>
+      <li><strong>MCP</strong> (Model Context Protocol) connects the matcher to the AI tools in the triage workflow.</li>
+    </ul>
+    <div class="stack"><span>Azure AI Search</span><span>Azure OpenAI</span><span>GitHub Models</span><span>MCP</span></div>
+
+    <h2>Try a small version</h2>
+    <p>The demo below runs entirely in your browser against a handful of made-up issues for a fictional app. It uses simple word-overlap scoring rather than embeddings, so it's cruder than the real system, but it shows the core idea: paste in some feedback and see what it matches.</p>
+  </article>
+
+  <div class="card demo" id="matchy">
+    <div class="dh"><b>Matchy Matchy, toy edition</b><span class="eyebrow">Runs in your browser</span></div>
+    <label for="fb" class="eyebrow" style="display:block;margin-bottom:8px">Customer feedback</label>
+    <textarea id="fb" placeholder="e.g. Every time I sign in with SSO it sends me straight back to the login page"></textarea>
+    <div class="samples" id="samples"></div>
+    <button class="btn or" type="button" id="run">Find matches <svg class="i"><use href="#i-arrow"/></svg></button>
+    <div class="results" id="results" aria-live="polite"></div>
+    <p class="fine">Sample issues are fictional. Nothing you type leaves this page.</p>
+  </div>
+
+  <article class="prose" style="border-top:0;padding-top:0">
+    <h2>Why it matters</h2>
+    <p>When duplicates collapse into the issue they belong to, two things get better. Volume becomes a signal: ten reports on one issue tell you more than ten separate tickets. And the feedback that doesn't match anything stands out as the new problem worth a closer look.</p>
+    <p>Matchy Matchy grew out of my work on feedback systems at GitHub, where routing the right signal to the right team quickly was the whole job.</p>
+  </article>
+</main>
+
+<section class="next">
+  <div class="wrap">
+    <a class="back" style="margin:0" href="./"><svg class="i"><use href="#i-right"/></svg>All writing</a>
+    <a class="btn or" href="../#contact">Talk to me about this <svg class="i"><use href="#i-arrow"/></svg></a>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <span class="logo">natalie<b>.</b></span>
+    <span>© 2026 Natalie Rodriguez-Jackson · All rights reserved</span>
+  </div>
+</footer>
+
+<script src="../assets/js/site.js"></script>
+<script src="../assets/js/demos/matchy-demo.js"></script>
+</body>
+</html>
