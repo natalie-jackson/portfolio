@@ -3,10 +3,10 @@
 Natalie's personal portfolio. Static site on GitHub Pages: plain HTML/CSS/JS, no framework, no build step, no npm. Keep it that way unless she asks otherwise.
 
 ## Structure
-- `index.html`: homepage. Sections in order: hero, company strip, 01 About, 02 Highlights, 03 What I offer, 04 Journey (scroll tunnel), 05 Writing & Lab, 06 Off the clock, 07 Contact. The full name in the hero stays on one line (`white-space:nowrap`). No contact form, no header/footer logo, no live clock.
+- `index.html`: homepage. Sections in order: hero, company strip, 01 About, 02 Highlights, 03 What I offer, 04 Journey (scroll tunnel), 05 Projects (nav label "Projects"; files live in writing/), 06 Off the clock, 07 Contact. The full name in the hero stays on one line (`white-space:nowrap`). No contact form, no header/footer logo, no live clock.
 - `assets/css/site.css`: all styles. Color and font tokens live in `:root` at the top. Reuse existing classes (`.card`, `.btn`, `.btn.or`, `.shead`, `.h2`, `.grid3`, `.kind`, `.prose`, `.demo`) before adding new ones.
 - `assets/js/site.js`: all behavior. Each feature is a self-contained IIFE that returns early if its elements are missing, so the file is shared by every page. Journey chapters are a data array in this file.
-- `assets/js/posts.js`: `window.POSTS`, the list that renders Writing & Lab cards. Newest first.
+- `assets/js/posts.js`: `window.POSTS`, the list that renders Projects cards. Newest first.
 - `writing/`: `index.html` lists all posts; one HTML file per post; `_template.html` is the starting point for new posts.
 - `assets/js/demos/`: one script per interactive demo, loaded only by its post.
 

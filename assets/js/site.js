@@ -91,7 +91,7 @@ $$(".photo img").forEach(img=>{
   const grid = $("[data-posts]"); if(!grid || !window.POSTS) return;
   const base = grid.dataset.base || "";               // "" on homepage, "../" on writing pages
   const limit = parseInt(grid.dataset.limit || "0",10);
-  const labels = {essay:"Essay", article:"Article", tool:"AI Tool"};
+  const labels = {essay:"Thoughts", article:"Article", tool:"AI Tool"};
   const fmt = d => { const [y,m] = d.split("-"); return new Date(+y, (+m||1)-1).toLocaleString("en-US",{month:"short",year:"numeric"}); };
   const card = p => {
     const live = p.status === "live";
