@@ -222,12 +222,14 @@ a.post:hover .go{background:var(--accent);color:#fff;border-color:var(--accent)}
 .ctop{font-weight:600;font-size:clamp(44px,7vw,84px);letter-spacing:-.045em;line-height:1;margin-bottom:18px}
 .ctop em{color:var(--accent);font-style:italic}
 .csub{font-size:17px;color:var(--ink2);margin-bottom:clamp(32px,4vw,48px)}
+.grid2{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
+@media (max-width:640px){.grid2{grid-template-columns:1fr}}
 .cc{padding:24px 26px;display:grid;gap:4px;align-content:start}
 .cc .tp{display:flex;justify-content:space-between;color:var(--muted);margin-bottom:22px}
 .cc .tp .mono{font-size:12px}
 .cc h5{font-size:18px;font-weight:600;letter-spacing:-.01em}
 .cc small{font-size:12px;color:var(--muted)}
-.cc .v{font-family:var(--mono);font-size:14px;margin-top:12px;overflow-wrap:anywhere;display:flex;gap:10px;align-items:center;justify-content:space-between}
+.cc .v{font-family:var(--mono);font-size:clamp(12px,1.25vw,15px);white-space:nowrap;margin-top:12px;overflow-wrap:anywhere;display:flex;gap:10px;align-items:center;justify-content:space-between}
 .cc .v button{flex:none;white-space:nowrap;font:500 11px var(--sans);border:1px solid var(--line);border-radius:999px;padding:4px 10px;background:var(--card);cursor:pointer;color:var(--ink2)}
 .cc .v button:hover{color:var(--accent)}
 .form{margin-top:16px;padding:clamp(20px,3vw,40px);display:grid;gap:12px}

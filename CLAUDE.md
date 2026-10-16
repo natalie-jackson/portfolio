@@ -24,3 +24,4 @@ Natalie's personal portfolio. Static site on GitHub Pages: plain HTML/CSS/JS, no
 ## Before committing
 - Preview with `python3 -m http.server 8000` and check the homepage plus any page you touched, at desktop and phone width.
 - Commit with a short message describing the change, then push to `main` (GitHub Pages deploys from there).
+- When you change `assets/css/site.css` or any file in `assets/js/`, bump the `?v=N` number on its `<link>`/`<script>` tags in every HTML page, so browsers load the new version instead of a cached one.
