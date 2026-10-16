@@ -1,16 +1,16 @@
 /* =========================================================
    Natalie Rodriguez-Jackson — portfolio styles
-   Layout: centered 1124px column on warm off-white, floating
-   pill nav, white rounded cards, one orange accent. The
-   Journey section is a full-bleed dark scroll "tunnel".
+   Look: dark + neon, matching the Journey tunnel. Black page,
+   white type, dark glass cards, one neon-blue accent with glow,
+   and a faint grid that echoes the tunnel lines.
    ========================================================= */
 
 :root{
-  --bg:#FAF9F5; --card:#FFFFFF; --ink:#0A0A0A; --ink2:#3F3F46; --muted:#71717A; --line:rgba(0,0,0,.07);
-  --accent:#E0613A; --accent-soft:rgba(224,97,58,.10);
+  --bg:#000000; --card:rgba(255,255,255,.035); --card-solid:#0B0D14; --ink:#F4F5FA; --ink2:#B3B8C7; --muted:#7A8094; --line:rgba(255,255,255,.09);
+  --accent:#6C8CFF; --accent-soft:rgba(108,140,255,.14); --glow:rgba(108,140,255,.45);
   --sans:"Inter Tight", Inter, system-ui, -apple-system, "Segoe UI", sans-serif;
   --mono:"JetBrains Mono", ui-monospace, Menlo, Consolas, monospace;
-  color-scheme:light;
+  color-scheme:dark;
 }
 
 *{box-sizing:border-box}
@@ -59,11 +59,11 @@ svg.i{width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:1.8;stro
 .ctas{display:flex;flex-wrap:wrap;gap:10px;margin-top:32px}
 .btn{display:inline-flex;align-items:center;gap:8px;font:500 14px var(--sans);padding:12px 22px;border-radius:999px;border:1px solid var(--line);background:var(--card);color:var(--ink);cursor:pointer;transition:transform .2s,box-shadow .2s}
 .btn:hover{transform:translateY(-2px)}
-.btn.or{background:var(--accent);border-color:var(--accent);color:#fff;box-shadow:0 8px 22px rgba(224,97,58,.32)}
+.btn.or{background:var(--accent);border-color:var(--accent);color:#fff;box-shadow:0 8px 22px var(--glow)}
 .btn svg.i{width:15px;height:15px}
 
 /* Photo: shows assets/img/headshot.jpg, or a placeholder if it's missing */
-.photo{position:relative;border-radius:22px;overflow:hidden;background:#EDEBE4;border:1px solid var(--line);aspect-ratio:4/5;max-width:100%;display:grid;place-items:center;box-shadow:0 20px 50px rgba(0,0,0,.08)}
+.photo{position:relative;border-radius:22px;overflow:hidden;background:#0E1018;border:1px solid var(--line);aspect-ratio:4/5;max-width:100%;display:grid;place-items:center;box-shadow:0 20px 50px rgba(0,0,0,.08)}
 .photo img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block}
 .photo .ph{display:grid;justify-items:center;gap:8px;color:var(--muted);font-family:var(--mono);font-size:11px;letter-spacing:.08em;text-transform:uppercase;text-align:center;padding:16px}
 .photo .ph svg{width:34px;height:34px;stroke-width:1.4}
@@ -138,12 +138,12 @@ section.sec{padding-block:clamp(72px,10vw,120px)}
 .skillbox{padding:clamp(22px,3vw,40px)}
 .tabs{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:28px}
 .tabs button{font:500 14px var(--sans);padding:9px 16px;border-radius:999px;border:1px solid var(--line);background:var(--card);color:var(--ink);cursor:pointer}
-.tabs button[aria-selected="true"]{background:var(--accent);border-color:var(--accent);color:#fff;box-shadow:0 6px 16px rgba(224,97,58,.3)}
+.tabs button[aria-selected="true"]{background:var(--accent);border-color:var(--accent);color:#fff;box-shadow:0 6px 16px var(--glow)}
 .bars{display:grid;grid-template-columns:1fr 1fr;gap:26px 48px}
 .bar .l{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:10px}
 .bar .l span{font-size:16px}
 .bar .l b{font-family:var(--mono);font-size:12px;font-weight:400;color:var(--muted)}
-.bar .t{height:4px;border-radius:4px;background:rgba(0,0,0,.06);overflow:hidden}
+.bar .t{height:4px;border-radius:4px;background:rgba(255,255,255,.08);overflow:hidden}
 .bar .f{height:100%;background:var(--accent);border-radius:4px;width:0;transition:width 1s cubic-bezier(.2,.8,.2,1)}
 @media (max-width:640px){.bars{grid-template-columns:1fr}}
 
@@ -234,7 +234,7 @@ a.post:hover .go{background:var(--accent);color:#fff;border-color:var(--accent)}
 .cc .v button:hover{color:var(--accent)}
 .form{margin-top:16px;padding:clamp(20px,3vw,40px);display:grid;gap:12px}
 .form .two{display:grid;grid-template-columns:1fr 1fr;gap:12px}
-.form input,.form textarea{width:100%;font:15px var(--sans);color:var(--ink);background:#FDFCFA;border:1px solid rgba(0,0,0,.1);border-radius:12px;padding:13px 16px}
+.form input,.form textarea{width:100%;font:15px var(--sans);color:var(--ink);background:rgba(255,255,255,.04);border:1px solid var(--line);border-radius:12px;padding:13px 16px}
 .form textarea{min-height:140px;resize:vertical}
 .form .act{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}
 .form .msg{font-size:14px;color:var(--muted)}
@@ -272,8 +272,8 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:center;align-items:cent
 .prose ul,.prose ol{padding-left:1.2em}
 .prose li+li{margin-top:.4em}
 .prose blockquote{margin-inline:0;border-left:3px solid var(--accent);padding:4px 0 4px 20px;font-style:italic}
-.prose code{font-family:var(--mono);font-size:.85em;background:rgba(0,0,0,.05);border-radius:5px;padding:2px 6px}
-.prose pre{background:#16161A;color:#ECECEC;border-radius:14px;padding:18px 20px;overflow-x:auto;font-size:14px;line-height:1.6}
+.prose code{font-family:var(--mono);font-size:.85em;background:rgba(255,255,255,.08);border-radius:5px;padding:2px 6px}
+.prose pre{background:#0B0D14;border:1px solid var(--line);color:#ECECEC;border-radius:14px;padding:18px 20px;overflow-x:auto;font-size:14px;line-height:1.6}
 .prose pre code{background:none;padding:0;color:inherit}
 .prose figure{margin-inline:0}
 .prose figure img{border-radius:16px;border:1px solid var(--line)}
@@ -286,7 +286,7 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:center;align-items:cent
 .demo{max-width:none;padding:clamp(20px,3vw,32px);margin-block:2em}
 .demo .dh{display:flex;justify-content:space-between;align-items:center;gap:10px;margin-bottom:16px;flex-wrap:wrap}
 .demo .dh b{font-size:17px}
-.demo textarea{width:100%;min-height:96px;font:16px var(--sans);color:var(--ink);background:#FDFCFA;border:1px solid rgba(0,0,0,.1);border-radius:12px;padding:13px 16px;resize:vertical}
+.demo textarea{width:100%;min-height:96px;font:16px var(--sans);color:var(--ink);background:rgba(255,255,255,.04);border:1px solid var(--line);border-radius:12px;padding:13px 16px;resize:vertical}
 .demo .samples{display:flex;flex-wrap:wrap;gap:6px;margin:12px 0 16px}
 .demo .samples button{font:500 13px var(--sans);border:1px solid var(--line);background:var(--bg);border-radius:999px;padding:6px 12px;cursor:pointer;color:var(--ink2);text-align:left}
 .demo .samples button:hover{color:var(--accent);border-color:var(--accent)}
@@ -296,7 +296,7 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:center;align-items:cent
 .res .id{font-family:var(--mono);font-size:12px;color:var(--muted)}
 .res .tt{font-weight:500}
 .res .sc{font-family:var(--mono);font-size:13px;font-variant-numeric:tabular-nums}
-.res .meter{grid-column:1/-1;height:4px;border-radius:4px;background:rgba(0,0,0,.06);overflow:hidden}
+.res .meter{grid-column:1/-1;height:4px;border-radius:4px;background:rgba(255,255,255,.08);overflow:hidden}
 .res .meter i{display:block;height:100%;background:var(--accent);border-radius:4px}
 .res.best{border-color:var(--accent);background:var(--card)}
 .verdict{font-size:15px;color:var(--ink2);padding:12px 16px;border-radius:12px;background:var(--accent-soft)}
@@ -304,3 +304,83 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:center;align-items:cent
 
 .next{border-top:1px solid var(--line);padding-block:clamp(40px,6vw,64px)}
 .next .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;align-items:center}
+
+
+/* =========================================================
+   Dark + neon layer (matches the Journey tunnel)
+   ========================================================= */
+body{background:
+  radial-gradient(1100px 620px at 78% -8%, rgba(108,140,255,.18), transparent 62%),
+  radial-gradient(800px 520px at -12% 28%, rgba(176,124,255,.10), transparent 60%),
+  var(--bg);
+  background-repeat:no-repeat}
+::selection{background:var(--accent);color:#fff}
+
+/* Faint perspective grid behind the hero, fading out */
+.hero{position:relative}
+.hero::before{content:"";position:absolute;inset:0 calc(50% - 50vw);z-index:-1;pointer-events:none;
+  background-image:linear-gradient(rgba(108,140,255,.09) 1px,transparent 1px),linear-gradient(90deg,rgba(108,140,255,.09) 1px,transparent 1px);
+  background-size:64px 64px;
+  -webkit-mask-image:radial-gradient(ellipse 70% 60% at 60% 40%,#000 20%,transparent 75%);
+          mask-image:radial-gradient(ellipse 70% 60% at 60% 40%,#000 20%,transparent 75%)}
+
+/* Glowing accents */
+.big .dot,.h2 em,.ctop em,.typer .w,.page-title em{color:var(--accent);text-shadow:0 0 24px var(--glow)}
+.typer .caret{box-shadow:0 0 12px var(--glow)}
+.shead span i{color:var(--accent)}
+.lede u{color:var(--ink)}
+
+/* Nav and floating controls: dark glass */
+.pill,.circ,.totop{background:rgba(12,14,22,.72);border-color:var(--line);-webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px);box-shadow:0 8px 30px rgba(0,0,0,.4)}
+.pill a{color:var(--ink2)}
+.pill a:hover,.pill a.on{color:#fff;background:var(--accent-soft);box-shadow:inset 0 0 0 1px rgba(108,140,255,.35)}
+.circ{color:var(--ink2)}
+.circ:hover{color:#fff;border-color:var(--accent);box-shadow:0 0 18px var(--glow)}
+.totop{color:var(--ink)}
+
+/* Cards: dark glass with a neon edge on hover */
+.card{background:linear-gradient(180deg,rgba(255,255,255,.05),rgba(255,255,255,.02));border-color:var(--line);-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px)}
+.svc,.stat,.hb,.cc,a.post,.mini,.hello{transition:transform .25s,border-color .25s,box-shadow .25s}
+.svc:hover,.stat:hover,.hb:hover,.cc:hover,a.post:hover{border-color:rgba(108,140,255,.55);box-shadow:0 0 0 1px rgba(108,140,255,.25),0 0 40px rgba(108,140,255,.18)}
+.ico{background:var(--accent-soft);color:var(--accent);box-shadow:inset 0 0 0 1px rgba(108,140,255,.3),0 0 18px rgba(108,140,255,.2)}
+.stat .n{background:linear-gradient(180deg,#fff,#AFC0FF);-webkit-background-clip:text;background-clip:text;color:transparent}
+a.post:hover .go{background:var(--accent);border-color:var(--accent);color:#fff;box-shadow:0 0 18px var(--glow)}
+.post.soon{background:transparent;border-style:dashed}
+
+/* Buttons */
+.btn{background:rgba(255,255,255,.04);border-color:var(--line);color:var(--ink)}
+.btn:hover{border-color:rgba(108,140,255,.6);box-shadow:0 0 22px rgba(108,140,255,.25)}
+.btn.or{background:var(--accent);border-color:var(--accent);color:#fff;box-shadow:0 0 0 1px rgba(255,255,255,.08) inset,0 8px 28px var(--glow)}
+.btn.or:hover{box-shadow:0 0 0 1px rgba(255,255,255,.15) inset,0 10px 36px rgba(108,140,255,.65)}
+.tabs button{background:rgba(255,255,255,.04);border-color:var(--line);color:var(--ink2)}
+.tabs button:hover{color:#fff}
+.tabs button[aria-selected="true"]{background:var(--accent);border-color:var(--accent);color:#fff}
+
+/* Photos and tags */
+.photo{border-color:var(--line);box-shadow:0 0 0 1px rgba(108,140,255,.18),0 30px 80px rgba(0,0,0,.6),0 0 60px rgba(108,140,255,.15)}
+.about .pcard .photo{box-shadow:none}
+.tagloc{background:var(--card-solid);border-color:var(--line);color:var(--muted);box-shadow:0 8px 24px rgba(0,0,0,.5)}
+.tagloc b{color:var(--ink)}
+
+/* Company strip and dividers */
+.strip{border-color:var(--line);background:rgba(255,255,255,.015)}
+.co .t{color:var(--accent)}
+.kind{color:var(--accent);background:var(--accent-soft);box-shadow:inset 0 0 0 1px rgba(108,140,255,.25)}
+.post.soon .kind{box-shadow:none}
+.cc .v button{background:rgba(255,255,255,.05);border-color:var(--line);color:var(--ink2)}
+.cc .v button:hover{color:#fff;border-color:var(--accent)}
+footer{border-color:var(--line)}
+
+/* Journey blends into the page edges */
+.journey{background:#000}
+.journey::before,.journey::after{content:"";position:absolute;left:0;right:0;height:120px;z-index:1;pointer-events:none}
+.journey::before{top:0;background:linear-gradient(#000,transparent)}
+.journey::after{bottom:0;background:linear-gradient(transparent,#000)}
+
+/* Demo (Matchy Matchy) */
+.demo textarea{color:var(--ink)}
+.demo .samples button{background:rgba(255,255,255,.04);color:var(--ink2)}
+.res{background:rgba(255,255,255,.03)}
+.res.best{background:rgba(108,140,255,.08);border-color:rgba(108,140,255,.55);box-shadow:0 0 24px rgba(108,140,255,.15)}
+.res .meter i{box-shadow:0 0 10px var(--glow)}
+.prose .todo{color:#AFC0FF}

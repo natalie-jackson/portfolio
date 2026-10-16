@@ -11,7 +11,7 @@ Natalie's personal portfolio. Static site on GitHub Pages: plain HTML/CSS/JS, no
 - `assets/js/demos/`: one script per interactive demo, loaded only by its post.
 
 ## Conventions
-- Design: warm off-white background, white rounded cards, single orange accent `--accent: #E0613A`, Inter Tight + JetBrains Mono. Section headers use `<div class="shead"><span><i>/ NN</i>&nbsp;&nbsp;Name</span></div>`. If you add or remove a homepage section, renumber the `/ NN` labels and update the nav.
+- Design: dark + neon to match the Journey tunnel. Black background, dark glass `.card`s, white type, single neon-blue accent `--accent: #6C8CFF` with glow, Inter Tight + JetBrains Mono. Section headers use `<div class="shead"><span><i>/ NN</i>&nbsp;&nbsp;Name</span></div>`. If you add or remove a homepage section, renumber the `/ NN` labels and update the nav.
 - Pages in `writing/` use `../` relative paths for assets and homepage links.
 - Icons are an inline SVG sprite injected by `site.js`: `<svg class="i"><use href="#i-NAME"/></svg>`. Add new icons to the `s` object in `injectIcons`.
 - Writing style for site copy: plain, direct, first person. No invented metrics, employers, or claims; ask Natalie if a fact is missing.
