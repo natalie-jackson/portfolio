@@ -1,11 +1,11 @@
 /* =========================================================
-   Matchy Matchy, toy edition.
+   Signal Match, sample edition.
    Scores new feedback against a small set of fictional issues
    using TF-IDF word overlap plus a few synonyms. The real
    system uses embeddings; this keeps the demo in-browser.
    ========================================================= */
 (function(){
-  const root = document.getElementById("matchy"); if(!root) return;
+  const root = document.getElementById("signal-match"); if(!root) return;
 
   const ISSUES = [
     {id:"#1042", title:"SSO sign-in redirects back to the login page", body:"Users signing in through Okta or Azure AD single sign-on get redirected to the login screen again in a loop."},

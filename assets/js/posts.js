@@ -10,10 +10,10 @@
    ========================================================= */
 window.POSTS = [
   {
-    slug: "matchy-matchy",
+    slug: "signal-match",
     type: "tool",
     status: "live",
-    title: "Matchy Matchy: matching customer feedback to issues you already know about",
+    title: "Signal Match: matching customer feedback to issues you already know about",
     excerpt: "Semantic matching that pairs incoming feedback with existing issues, so duplicates collapse and new signal stands out. Includes a small demo you can run in your browser.",
     date: "2026-10",
     read: "4 min",

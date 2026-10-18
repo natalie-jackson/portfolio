@@ -211,9 +211,11 @@ a.post:hover .go{background:var(--accent);color:#fff;border-color:var(--accent)}
 
 /* ---------- Hobbies ---------- */
 .hob{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
-.hb{padding:22px;display:grid;gap:22px;transition:transform .25s}
-.hb .ic{color:var(--muted)}
-.hb span{font-size:15px;font-weight:500}
+.hb{padding:24px;display:grid;gap:10px;align-content:start;transition:transform .25s}
+.hb .ic{color:var(--muted);margin-bottom:12px}
+.hb span{font-size:17px;font-weight:600;letter-spacing:-.01em}
+.hb p{font-size:14px;color:var(--ink2);line-height:1.55}
+.hb p em{color:var(--ink)}
 .hb:hover{transform:translateY(-3px)}
 .hb:hover .ic{color:var(--accent)}
 @media (max-width:760px){.hob{grid-template-columns:1fr 1fr}}
@@ -377,7 +379,7 @@ footer{border-color:var(--line)}
 .journey::before{top:0;background:linear-gradient(#000,transparent)}
 .journey::after{bottom:0;background:linear-gradient(transparent,#000)}
 
-/* Demo (Matchy Matchy) */
+/* Demo (Signal Match) */
 .demo textarea{color:var(--ink)}
 .demo .samples button{background:rgba(255,255,255,.04);color:var(--ink2)}
 .res{background:rgba(255,255,255,.03)}
