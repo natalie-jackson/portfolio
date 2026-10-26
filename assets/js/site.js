@@ -125,7 +125,7 @@ $$(".photo img").forEach(img=>{
 
 /* ---------- Journey tunnel ---------- */
 (function(){
-  const sec = $("#resume"); if(!sec) return;
+  const sec = $("#journey"); if(!sec) return;
   const chapters = [
     {theme:"AI Governance",jump:"AI Gov",color:"#5C89FF",when:"GitHub / Microsoft · 2022–2026",co:"AI Governance",role:"Senior Program Manager · CoreAI",where:"Model Gating · Limited Access Framework",desc:"Led Model Gating for Microsoft Copilot: 5 engineers across 4 time zones and 25+ stakeholders aligned on one decision framework. Built the Limited Access Framework from a blank slate, with three parallel workstreams across Legal, Responsible AI, Engineering, and Risk.",tags:["Copilot","Model Gating","LAF","RACI"]},
     {theme:"Feedback Ecosystem",jump:"Feedback",color:"#F2A33A",when:"GitHub / Microsoft · 2022–2026",co:"Feedback",role:"Senior Program Manager · Feedback ecosystem",where:"HPF · Signal Match · Unwrap",desc:"Built High Priority Feedback from scratch, connecting 1,000+ enterprise signals to roadmaps and $508M+ in nominated ARR. Automated it to lift SLA attainment from 52% to 92%, shipped 170 priority changes in 18 months, and built Signal Match, which has matched 6,000+ issues.",tags:["HPF","Automation","AI","Dashboards"]},

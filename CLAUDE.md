@@ -7,6 +7,7 @@ Natalie's personal portfolio. Static site on GitHub Pages: plain HTML/CSS/JS, no
 - `assets/css/site.css`: all styles. Color and font tokens live in `:root` at the top. Reuse existing classes (`.card`, `.btn`, `.btn.or`, `.shead`, `.h2`, `.grid3`, `.kind`, `.prose`, `.demo`) before adding new ones.
 - `assets/js/site.js`: all behavior. Each feature is a self-contained IIFE that returns early if its elements are missing, so the file is shared by every page. Journey chapters are a data array in this file.
 - `assets/js/posts.js`: `window.POSTS`, the list that renders Projects cards. Newest first.
+- `resume/index.html`: the Resume page (linked as "Resume" in the nav after Work). The homepage Journey section's anchor is `#journey`.
 - `writing/`: `index.html` lists all posts; one HTML file per post; `_template.html` is the starting point for new posts.
 - `assets/js/demos/`: one script per interactive demo, loaded only by its post.
 

@@ -405,3 +405,41 @@ footer{border-color:var(--line)}
 .cr .ico{margin-bottom:14px}
 .cr h5{font-size:20px;font-weight:600;letter-spacing:-.02em}
 .cr p{font-size:15px;color:var(--ink2)}
+
+/* ---------- Resume page ---------- */
+.resume{padding-bottom:clamp(64px,9vw,110px)}
+.resume .page-title{white-space:nowrap;font-size:clamp(24px,6.2vw,84px);max-width:none}
+.resume .page-head .eyebrow{display:block}
+.rv-org+ul{margin-top:14px}
+.rv-contact{display:flex;flex-wrap:wrap;gap:10px 22px;margin-top:24px;font-family:var(--mono);font-size:13px;color:var(--ink2)}
+.rv-contact a,.rv-contact span{display:inline-flex;align-items:center;gap:8px}
+.rv-contact a:hover{color:var(--accent)}
+.rv-contact svg.i{width:15px;height:15px;color:var(--accent)}
+.rv-sec{border-top:1px solid var(--line);padding-top:clamp(28px,4vw,40px);margin-top:clamp(28px,4vw,40px)}
+.rv-h{font-family:var(--mono);font-size:12px;letter-spacing:.3em;text-transform:uppercase;color:var(--accent);font-weight:500;margin-bottom:28px}
+.rv-job{display:grid;grid-template-columns:200px minmax(0,1fr);gap:clamp(16px,4vw,48px);padding-bottom:36px}
+.rv-job+.rv-job{border-top:1px solid var(--line);padding-top:36px}
+.rv-when{display:grid;gap:4px;align-content:start;font-family:var(--mono);font-size:13px;color:var(--muted)}
+.rv-when b{color:var(--ink);font-weight:500}
+.rv-body{max-width:72ch}
+.rv-body h3{font-size:clamp(22px,2.4vw,28px);font-weight:600;letter-spacing:-.02em;line-height:1.2}
+.rv-org{color:var(--ink2);margin-top:4px}
+.rv-body h4{font-family:var(--mono);font-size:11px;letter-spacing:.24em;text-transform:uppercase;color:var(--muted);font-weight:500;margin:28px 0 12px}
+.rv-lead{margin:14px 0 6px;color:var(--ink)}
+.rv-body ul{margin:0;padding-left:1.1em;display:grid;gap:8px}
+.rv-body li{color:var(--ink2);font-size:15.5px;line-height:1.6}
+.rv-body li b,.rv-lead b{color:var(--ink);font-weight:600}
+.rv-body li::marker{color:var(--accent)}
+.rv-skills{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+.rv-skills>div{padding:22px;border:1px solid var(--line);border-radius:18px;background:rgba(255,255,255,.03)}
+.rv-skills h5{font-size:16px;font-weight:600;margin-bottom:8px}
+.rv-skills p{font-size:14.5px;color:var(--ink2);line-height:1.6}
+@media (max-width:760px){.rv-job{grid-template-columns:1fr}.rv-skills{grid-template-columns:1fr}}
+@media print{
+  :root{--bg:#fff;--ink:#111;--ink2:#333;--muted:#555;--line:#ddd;--accent:#2b4fd8}
+  body{background:#fff!important}
+  .top,.totop,.back,footer,.hero::before{display:none!important}
+  .page-head{padding-top:0}
+  .page-title em{text-shadow:none}
+  .rv-skills>div{background:none}
+}
