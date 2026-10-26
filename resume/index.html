@@ -9,7 +9,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter+Tight:ital,wght@0,400;0,500;0,600;1,500;1,600&family=JetBrains+Mono:wght@400;500&display=swap">
-  <link rel="stylesheet" href="../assets/css/site.css?v=12">
+  <link rel="stylesheet" href="../assets/css/site.css?v=13">
 </head>
 <body>
 
@@ -42,61 +42,282 @@
     </div>
   </section>
 
-  <section class="rv-sec">
-    <h2 class="rv-h">Experience</h2>
+  <section class="rv-sec" aria-labelledby="exp">
+    <h2 class="rv-h" id="exp">Experience</h2>
 
+    <!-- GITHUB -->
     <article class="rv-job">
-      <div class="rv-when"><b>2022 – 2026</b><span>GitHub / Microsoft</span></div>
+      <div class="rv-when">
+        <div class="dates">Mar 2022 – Jul 2026</div>
+        <div>GitHub / Microsoft</div>
+        <div>CoreAI</div>
+        <div>New York · Remote</div>
+      </div>
       <div class="rv-body">
         <h3>Senior Program Manager, Product Operations</h3>
         <p class="rv-org">GitHub / Microsoft · CoreAI</p>
+        <p class="rolesum">I sat between Revenue, Product, Engineering, and Legal and owned the programs that connected them: launch governance for new AI models, access control for restricted AI capabilities, the system that turned enterprise customer feedback into roadmap work, and the community and support channel that served developers directly.</p>
 
-        <h4>AI governance</h4>
-        <p class="rv-lead"><b>Model Gating for Microsoft Copilot</b> · Technical Program Lead</p>
-        <ul>
-          <li>Led 5 engineers across 4 time zones building the system that controls access to new AI models at launch.</li>
-          <li>Owned requirements, milestones, dependencies, and release coordination.</li>
-          <li>Aligned 25+ stakeholders across Engineering, Product, and Legal on a shared decision framework, balancing ship velocity against guardrails and compliance.</li>
-        </ul>
-        <p class="rv-lead"><b>Limited Access Framework (LAF)</b></p>
-        <ul>
-          <li>Built a 0–1 program for restricted AI capability access, from a blank slate to execution.</li>
-          <li>Stood up three parallel workstreams: approval procedures, engineering implementation, and incident response.</li>
-          <li>Set RACI and dependency maps across Legal/CELA, Responsible AI, Engineering, and Risk.</li>
-        </ul>
+        <div class="group">
+          <p class="eyebrow">Role scope</p>
+          <ul class="plain">
+            <li><strong>Product lifecycle process:</strong> managed the product lifecycle process for my product area and advised PMs on moving through each step, from intake and prioritization to launch review and post-launch follow-up.</li>
+            <li><strong>Quantifying customer problems:</strong> collected and quantified product challenges from enterprise feedback and customer conversations, tying each to account and ARR data so Product and Engineering could weigh them in future development (see <a href="#hpf">HPF</a> and <a href="#dashboards">ARR dashboards</a>).</li>
+            <li><strong>Roadmap and planning:</strong> facilitated roadmap and planning updates across multiple product areas, in step with GitHub's wider annual and quarterly planning rhythms.</li>
+            <li><strong>Release and launch readiness:</strong> ran readiness for betas, early access, and staged rollouts of new AI models and capabilities, making sure customer-facing teams had the information, playbooks, and escalation paths to support them (see <a href="#model-gating">Model Gating</a> and <a href="#laf">LAF</a>).</li>
+            <li><strong>Shared process and tools:</strong> drove adoption of shared Product Operations processes and tooling, including the HPF automation suite and the Unwrap rollout, and recommended where the wider team's processes should improve.</li>
+            <li><strong>Cross-team alignment:</strong> created alignment between Product teams and partners in Engineering, Go-To-Market, Sales, Legal, and Responsible AI.</li>
+            <li><strong>Measuring success:</strong> defined the success and health metrics for my area, made them visible in shared dashboards and recurring readouts, and turned them into recommended actions.</li>
+          </ul>
+        </div>
 
-        <h4>Feedback ecosystem</h4>
-        <ul>
-          <li>Redesigned how GitHub takes in and acts on customer feedback, consolidating fragmented channels and speeding up responses.</li>
-          <li><b>High Priority Feedback (HPF):</b> built the end-to-end intake-to-shipping system from scratch, connecting 1,000+ enterprise signals to product roadmaps and tied to $508M+ in nominated ARR. Shipped 170 high-priority product changes in 18 months through escalation paths that routed urgent signals to the right teams.</li>
-          <li><b>HPF automation suite:</b> built with GitHub Actions, Python, and Salesforce/Gainsight. Raised SLA attainment from 52% to 92%, adopted by 50+ users for SLA tracking, board hygiene, and PM notifications.</li>
-          <li><b>Signal Match:</b> production semantic matching system pairing customer feedback with release issues, built on Azure AI Search, GitHub Models/Azure OpenAI, and MCP. Designed safety-first with human-in-the-loop review, validation, and confidence scoring; 6,000+ issues processed live.</li>
-          <li><b>Dashboards and data pipelines:</b> tracked $3.6B in ARR and surfaced $224M in at-risk renewals, which led to a revised triage process.</li>
-          <li><b>Unwrap launch:</b> scoped, evaluated, and launched an AI customer-intelligence platform across GitHub and Microsoft, including a Slack integration adopted by 160+ PMs.</li>
-          <li>Created and ran feedback newsletters that put top customer themes in front of product and engineering leadership.</li>
-        </ul>
+        <!-- AI GOVERNANCE -->
+        <div class="group">
+          <p class="eyebrow">AI governance</p>
 
-        <h4>Community program</h4>
-        <ul>
-          <li>Grew monthly engaged community users from 5,000 to 48,000.</li>
-          <li>Migrated the community from Discord to GitHub Community Discussions.</li>
-          <li>Doubled the scope of the Community Events program in one year, working with Revenue, EPD, and Operations.</li>
-          <li>Coordinated GitHub and Microsoft planning, milestones, and timelines for community deliverables.</li>
-          <li>Wrote weekly summaries and monthly analyses for Revenue and Product Support leadership, and presented at monthly reviews.</li>
-          <li>Ran the weekly community meeting, quarterly retros, project kickoffs, and program documentation.</li>
+          <div class="proj" id="model-gating">
+            <h4>Model Gating for Microsoft Copilot <em>· Technical Program Lead</em></h4>
+            <p class="what">The system and decision process that controlled which customers could access new AI models in Microsoft Copilot at launch, and when.</p>
+            <dl>
+              <dt>The problem</dt>
+              <dd>Every new model launch pulled in Engineering, Product, and Legal with competing priorities: ship velocity, safety guardrails, and compliance. Without one framework, launch decisions were made ad hoc and differently each time.</dd>
+              <dt>What I did</dt>
+              <dd><ul>
+                <li>Led a distributed team of 5 engineers across 4 time zones building the gating system that controls access to new AI models at launch.</li>
+                <li>Owned requirements, milestones, dependency maps, and release coordination for each launch.</li>
+                <li>Built a shared decision framework and a go/no-go run-of-show covering readiness criteria, risks, dependencies, success metrics, and named owners, so every launch ran the same way regardless of who was in the room.</li>
+                <li>Ran weekly launch reviews with PMs, Support, Sales, and Legal, and ongoing and annual roadmapping across multiple product areas.</li>
+                <li>Reported release readiness across the developer AI portfolio, calibrating status from engineering updates up to executive-facing readiness reports.</li>
+                <li>Wrote the SOPs, run-of-show documents, and training that stakeholders followed in practice.</li>
+              </ul></dd>
+              <dt>Outcome</dt>
+              <dd>25+ stakeholders across Engineering, Product, and Legal aligned on one repeatable launch process, replacing case-by-case launch decisions.</dd>
+              <dt>Partners</dt>
+              <dd><div class="chips"><span class="chip">Engineering</span><span class="chip">Product</span><span class="chip">Legal / CELA</span><span class="chip">Responsible AI</span><span class="chip">Support</span><span class="chip">Sales</span></div></dd>
+            </dl>
+          </div>
+
+          <div class="proj" id="laf">
+            <h4>Limited Access Framework (LAF) <em>· Program owner, built from scratch</em></h4>
+            <p class="what">GitHub's program for granting, tracking, and auditing customer access to restricted AI capabilities in Microsoft Copilot before broad release.</p>
+            <dl>
+              <dt>The problem</dt>
+              <dd>Restricted AI capabilities needed a controlled path to customers, with Legal and Responsible AI review, a reliable way to provision access, and a plan for when something went wrong. None of that existed as a program.</dd>
+              <dt>What I did</dt>
+              <dd><ul>
+                <li>Took the program from a blank slate to execution and stood up three parallel workstreams: <strong>approval procedures</strong>, <strong>engineering implementation</strong>, and <strong>incident response</strong>.</li>
+                <li>Set RACI ownership and dependency maps across Legal / CELA, Responsible AI, Engineering, and Risk.</li>
+                <li>Owned the approval, access-provisioning, and audit workflows, with enforced SLAs and an auditable record of who received access and why.</li>
+                <li>Wrote the playbook account teams used to onboard customers, and ran the enablement and training that got teams shipping with confidence.</li>
+                <li>Iterated the templates and workflows from team feedback, then handed steady-state operation to partner teams.</li>
+              </ul></dd>
+              <dt>Outcome</dt>
+              <dd>3,500+ organizations evaluated through the approval process, giving product teams refinement signals before broad release.</dd>
+              <dt>Partners</dt>
+              <dd><div class="chips"><span class="chip">Legal / CELA</span><span class="chip">Responsible AI</span><span class="chip">Engineering</span><span class="chip">Risk</span><span class="chip">Account teams</span></div></dd>
+            </dl>
+          </div>
+        </div>
+
+        <!-- FEEDBACK ECOSYSTEM -->
+        <div class="group">
+          <p class="eyebrow">Feedback ecosystem</p>
+          <p class="intro">I redesigned how GitHub took in and acted on customer feedback: consolidating fragmented channels, giving urgent requests an owner and an SLA, and closing the loop with the field when things shipped.</p>
+
+          <div class="proj" id="hpf">
+            <h4>High Priority Feedback (HPF) <em>· Designed and ran from scratch</em></h4>
+            <p class="what">The end-to-end intake-to-shipping system that took urgent enterprise customer requests from Sales, CSMs, and Support and got them in front of the right engineering team.</p>
+            <dl>
+              <dt>The problem</dt>
+              <dd>Urgent Revenue-side escalations had no owner and no path into Product. Requests landed in different channels, sat without context, and the field never heard back.</dd>
+              <dt>What I did</dt>
+              <dd><ul>
+                <li>Secured executive sponsorship and designed a governed operating model between Revenue and Product, with defined SLAs, an auditable triage board, and escalation paths to a named engineering owner with full customer context.</li>
+                <li>Built the structured intake: categories, required fields, and validation rules so bugs, feature requests, customer context, and deal data could be compared and prioritized.</li>
+                <li>Ran the operating rhythm: weekly triage, escalation review, and weekly account health and risk readouts to product leadership.</li>
+                <li>Reported shipped wins back to customer-facing teams so they could tell customers what changed.</li>
+                <li>Wrote roadmap and vision documents for VP leadership on where the feedback system should go next.</li>
+              </ul></dd>
+              <dt>Outcome</dt>
+              <dd>1,000+ enterprise signals connected to product roadmaps and tied to nominated ARR, and 170 high-priority product changes shipped in 18 months.</dd>
+            </dl>
+          </div>
+
+          <div class="proj" id="hpf-auto">
+            <h4>HPF automation suite <em>· Product owner and builder</em></h4>
+            <p class="what">The automation layer that kept the HPF board accurate and moving without manual chasing.</p>
+            <dl>
+              <dt>What it did</dt>
+              <dd><ul>
+                <li><strong>SLA tracking:</strong> timed each request against its SLA and flagged breaches before they happened.</li>
+                <li><strong>Board hygiene:</strong> caught missing fields, stale items, and mis-routed requests.</li>
+                <li><strong>PM notifications:</strong> told the owning PM when a request needed action.</li>
+                <li><strong>CRM context:</strong> pulled account and renewal data from Salesforce and Gainsight onto each request.</li>
+              </ul></dd>
+              <dt>How I ran it</dt>
+              <dd>Built it with AI-assisted scripting on GitHub Actions, and ran sprint planning and reviews with a team of four automation engineers.</dd>
+              <dt>Outcome</dt>
+              <dd>SLA attainment rose from 52% to 92%, and the tooling was adopted by 50+ users across Product, Engineering, and Go-To-Market.</dd>
+              <dt>Stack</dt>
+              <dd><div class="chips"><span class="chip">GitHub Actions</span><span class="chip">AI-assisted scripting</span><span class="chip">Salesforce</span><span class="chip">Gainsight</span><span class="chip">GitHub Projects</span></div></dd>
+            </dl>
+          </div>
+
+          <div class="proj" id="signal-match">
+            <h4>Signal Match <em>· Designed and built</em></h4>
+            <p class="what">A production AI system that matched customer feedback to existing issues and shipped releases, so the field knew when a request was already being worked on or had shipped.</p>
+            <dl>
+              <dt>The problem</dt>
+              <dd>Across a repository of 12,000+ issues, nobody could reliably tell whether a new customer request duplicated something already tracked, or whether a release had just solved it.</dd>
+              <dt>What I did</dt>
+              <dd><ul>
+                <li>Designed semantic matching on Azure AI Search with GitHub Models / Azure OpenAI, using MCP for tool access.</li>
+                <li>Built it safety-first: human-in-the-loop review, validation, and confidence scoring, so no match reached a customer-facing team unreviewed.</li>
+                <li>Defined the routing logic, review workflow, and quality guardrails, and iterated the instructions and matching rules from real usage.</li>
+                <li>Worked through three architectural pivots to eliminate hallucinated matches.</li>
+              </ul></dd>
+              <dt>Outcome</dt>
+              <dd>6,000+ issues processed live in production, closing the loop between launches and roadmap prioritization.</dd>
+              <dt>Stack</dt>
+              <dd><div class="chips"><span class="chip">Azure AI Search</span><span class="chip">Azure OpenAI</span><span class="chip">GitHub Models</span><span class="chip">MCP</span><span class="chip">Human-in-the-loop review</span></div></dd>
+            </dl>
+          </div>
+
+          <div class="proj" id="dashboards">
+            <h4>ARR dashboards and data pipelines</h4>
+            <p class="what">The reporting layer that tied customer feedback to revenue, so leadership could see which accounts were at risk and why.</p>
+            <dl>
+              <dt>What I did</dt>
+              <dd><ul>
+                <li>Built data pipelines and self-serve dashboards joining feedback data with account and renewal data.</li>
+                <li>Defined the health metrics leadership used to track risk, and delivered weekly, monthly, and quarterly readouts that turned usage, feedback themes, and retention signals into recommendations.</li>
+                <li>Owned the source of truth for quarterly leadership reporting on account health and program performance.</li>
+              </ul></dd>
+              <dt>Outcome</dt>
+              <dd>Gave leadership a single view of ARR and at-risk renewals tied to customer feedback, which led to a revised triage process.</dd>
+            </dl>
+          </div>
+
+          <div class="proj" id="unwrap">
+            <h4>Unwrap evaluation and launch</h4>
+            <p class="what">Bringing an AI customer-intelligence platform to product teams across GitHub and Microsoft.</p>
+            <dl>
+              <dt>What I did</dt>
+              <dd><ul>
+                <li>Ran a build-vs-buy evaluation comparing an internal NLP approach with Unwrap AI; leadership adopted my recommendation.</li>
+                <li>Scoped, evaluated, and launched the platform across GitHub and Microsoft, including a Slack integration.</li>
+                <li>Created and ran feedback newsletters that put top customer themes in front of product and engineering leadership.</li>
+              </ul></dd>
+              <dt>Outcome</dt>
+              <dd>The Slack integration was adopted by 160+ PMs.</dd>
+            </dl>
+          </div>
+
+          <div class="proj" id="enablement">
+            <h4>Field enablement and playbooks</h4>
+            <p class="what">Teaching the field how to submit signals and escalate, and showing up in customer conversations to hear the problems firsthand.</p>
+            <dl>
+              <dt>What I did</dt>
+              <dd><ul>
+                <li>Built the playbook hub and trained roughly 200 CSMs, CX, and field sales team members on signal submission and escalation.</li>
+                <li>Joined 100+ enterprise customer conversations alongside CSMs, CSAs, and Sales, from early access through post-GA, bringing customer context back into prioritization.</li>
+              </ul></dd>
+            </dl>
+          </div>
+        </div>
+
+        <!-- COMMUNITY -->
+        <div class="group">
+          <p class="eyebrow">Community program</p>
+
+          <div class="proj" id="community">
+            <h4>GitHub Community program</h4>
+            <p class="what">GitHub's public community and support channel for developers.</p>
+            <dl>
+              <dt>What I did</dt>
+              <dd><ul>
+                <li>Migrated the community from Discord to GitHub Community Discussions.</li>
+                <li>Doubled the scope of the Community Events program in one year, working with Revenue, EPD, and Operations.</li>
+                <li>Managed an offshore contractor team in India and a California-based vendor: setting objectives and quality expectations, reviewing output, managing coverage and escalation paths, and coordinating handoffs across time zones.</li>
+                <li>Coordinated GitHub and Microsoft planning, milestones, and timelines for community deliverables.</li>
+                <li>Wrote weekly summaries and monthly analyses for Revenue and Product Support leadership, and presented at monthly reviews.</li>
+                <li>Ran the weekly community meeting, quarterly retros, project kickoffs, and program documentation.</li>
+              </ul></dd>
+              <dt>Outcome</dt>
+              <dd>Monthly engaged community users grew from 5,000 to 48,000.</dd>
+            </dl>
+          </div>
+
+          <div class="proj" id="moderation">
+            <h4>Trust and Safety content moderation <em>· 18 months</em></h4>
+            <p class="what">A formal, documented responsibility in partnership with GitHub's Trust and Safety team.</p>
+            <dl>
+              <dt>What I did</dt>
+              <dd><ul>
+                <li>Reviewed and actioned text, image, URL, and media content against GitHub's Terms of Service, across malware, phishing, intellectual property, private information, hate speech, harassment, and spam.</li>
+                <li>Documented evidence and rationale for each decision, and attended calibration sessions to keep enforcement consistent.</li>
+                <li>Managed ticketing and moderation queues so the highest-risk cases were handled first, and escalated child-safety cases through Legal and Trust and Safety channels.</li>
+              </ul></dd>
+            </dl>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <!-- BETTERMENT SWE -->
+    <article class="rv-job">
+      <div class="rv-when">
+        <div class="dates">Jan 2020 – Jan 2022</div>
+        <div>Betterment</div>
+        <div>New York, NY</div>
+      </div>
+      <div class="rv-body">
+        <h3>Software Engineer I</h3>
+        <p class="rv-org">Betterment · Regulated consumer fintech (investing and cash)</p>
+        <ul class="plain">
+          <li>Shipped production features across the full Ruby on Rails stack, including GraphQL APIs, on an Agile team.</li>
+          <li>Worked under strict code review, automated testing, and regulatory oversight, in systems where changes touched customer money.</li>
+          <li>Debugged complex issues across models, controllers, and views in a large, mature codebase.</li>
+          <li>Wrote and executed test cases for new features and system updates.</li>
+          <li>Translated operational and business needs into technical requirements, working between engineers and business stakeholders.</li>
+          <li>Recognized by senior engineers, through pairing and code review, for disciplined practice in high-stakes financial systems.</li>
         </ul>
       </div>
     </article>
 
-    <!-- TODO: add dates and details for the Betterment roles -->
+    <!-- BETTERMENT PSA -->
     <article class="rv-job">
-      <div class="rv-when"><b>Earlier</b><span>Betterment</span></div>
+      <div class="rv-when">
+        <div class="dates">Jan 2018 – Jan 2020</div>
+        <div>Betterment</div>
+        <div>New York, NY</div>
+      </div>
       <div class="rv-body">
-        <h3>Product &amp; Program Management · Software Engineer · Product Support</h3>
+        <h3>Product Support Associate</h3>
         <p class="rv-org">Betterment</p>
-        <ul>
-          <li>Moved from product support into software engineering, building in Ruby on Rails, Python, and GraphQL.</li>
-          <li>Then moved into product and program management, shipping outcomes across teams.</li>
+        <ul class="plain">
+          <li><strong>Frontline support:</strong> resolved account setup, access, and funding issues directly with customers, working the Zendesk queue.</li>
+          <li><strong>Self-serve enablement:</strong> designed self-serve content libraries, training curriculum, and onboarding flows for a 10-person support team, reducing customer inquiries by 44%.</li>
+          <li><strong>Voice of customer:</strong> synthesized frontline feedback and support trends into insights for Product and Operations, and coordinated cross-functional implementation plans with Product, Operations, and Compliance.</li>
+          <li><strong>Recognition:</strong> named 2019 Emerging Leader for contributions to customer operations.</li>
+        </ul>
+      </div>
+    </article>
+
+    <!-- EARLIER -->
+    <article class="rv-job">
+      <div class="rv-when">
+        <div class="dates">2013 – 2018</div>
+        <div>Earlier experience</div>
+      </div>
+      <div class="rv-body">
+        <h3>Operations and sales</h3>
+        <p class="rv-org">Where I learned operations before I learned to code.</p>
+        <ul class="plain">
+          <li><strong>Bozzuto · Assistant Property Operations Manager.</strong> Ran day-to-day operations for a 400+ unit luxury residential property. Partnered with maintenance, leasing, and accounting to improve resident satisfaction and response times, and handled resident escalations. Built reporting on rent collection, occupancy, and lease renewals that informed regional management decisions, coordinated vendors, and supported annual budgeting and forecasting.</li>
+          <li><strong>Bookspan · Operations Analyst.</strong> Built SQL and Excel analytics and KPI dashboards for operations.</li>
+          <li><strong>Target · Operations Manager.</strong> Led a 100+ person team and owned the department P&amp;L.</li>
+          <li><strong>Apple · Sales.</strong> Customer-facing retail sales.</li>
         </ul>
       </div>
     </article>
@@ -118,6 +339,6 @@
   </div>
 </footer>
 
-<script src="../assets/js/site.js?v=12"></script>
+<script src="../assets/js/site.js?v=14"></script>
 </body>
 </html>

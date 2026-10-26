@@ -434,7 +434,30 @@ footer{border-color:var(--line)}
 .rv-skills>div{padding:22px;border:1px solid var(--line);border-radius:18px;background:rgba(255,255,255,.03)}
 .rv-skills h5{font-size:16px;font-weight:600;margin-bottom:8px}
 .rv-skills p{font-size:14.5px;color:var(--ink2);line-height:1.6}
-@media (max-width:760px){.rv-job{grid-template-columns:1fr}.rv-skills{grid-template-columns:1fr}}
+.rv-when .dates{color:var(--ink);font-weight:500}
+.resume .rv-body{max-width:none}
+.resume .rolesum{margin-top:16px;color:var(--ink2);max-width:72ch}
+.resume .group{margin-top:34px}
+.resume .group>.eyebrow{display:block;margin-bottom:14px}
+.resume .group>.intro{margin:-4px 0 16px;color:var(--ink2);max-width:72ch}
+.resume ul.plain{margin:14px 0 0;padding-left:1.1em;display:grid;gap:8px;max-width:76ch}
+.resume ul.plain li{color:var(--ink2);font-size:15.5px;line-height:1.6}
+.resume ul.plain li strong{color:var(--ink);font-weight:600}
+.resume ul.plain a{color:var(--accent)}
+.resume .proj{border:1px solid var(--line);border-radius:18px;background:linear-gradient(180deg,rgba(255,255,255,.045),rgba(255,255,255,.015));padding:24px 24px 20px;margin-bottom:14px;scroll-margin-top:90px;transition:border-color .25s,box-shadow .25s}
+.resume .proj:hover{border-color:rgba(108,140,255,.45);box-shadow:0 0 30px rgba(108,140,255,.12)}
+.resume .proj h4{font-family:var(--sans);text-transform:none;font-size:19px;font-weight:600;letter-spacing:-.01em;color:var(--ink);margin:0}
+.resume .proj h4 em{font-style:normal;font-weight:400;color:var(--muted)}
+.resume .what{margin-top:8px;color:var(--ink)}
+.resume dl{margin:16px 0 0;display:grid;grid-template-columns:120px minmax(0,1fr);gap:12px 18px}
+.resume dt{font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);padding-top:4px}
+.resume dd{margin:0;color:var(--ink2);font-size:15.5px;line-height:1.6}
+.resume dd ul{margin:0;padding-left:18px;display:grid;gap:6px}
+.resume dd li::marker,.resume ul.plain li::marker{color:var(--accent)}
+.resume dd strong{color:var(--ink);font-weight:600}
+.resume .chips{display:flex;flex-wrap:wrap;gap:6px}
+.resume .chip{font-family:var(--mono);font-size:12px;color:var(--ink);border:1px solid var(--line);border-radius:999px;padding:3px 10px;background:rgba(0,0,0,.4)}
+@media (max-width:760px){.rv-job{grid-template-columns:1fr}.rv-skills{grid-template-columns:1fr}.resume dl{grid-template-columns:1fr;gap:2px}.resume dd{margin-bottom:10px}.resume .proj{padding:18px 16px 14px}}
 @media print{
   :root{--bg:#fff;--ink:#111;--ink2:#333;--muted:#555;--line:#ddd;--accent:#2b4fd8}
   body{background:#fff!important}
@@ -442,4 +465,5 @@ footer{border-color:var(--line)}
   .page-head{padding-top:0}
   .page-title em{text-shadow:none}
   .rv-skills>div{background:none}
+  .resume .proj{background:none;break-inside:avoid}
 }
